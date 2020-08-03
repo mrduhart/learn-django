@@ -8,3 +8,19 @@ ALLOWED_HOSTS = ['0.0.0.0', '192.168.99.100']
 - Time zones values are not UTC+-xy:wz https://stackoverflow.com/a/29311392/4281529
 - Database migration creates necessary tables for each entry of INSTALLED_APPS
 - Create docker image with database utilities, e.g. sqlite3
+- To change models:
+  1. Change models in models.py
+  2. Create migrations for the models with python manage.py makemigrations
+  3. Apply changes to database (migrate) with python manage.py migrate
+- Django provides a database API for
+  - Creation (insertion)
+  - Filtering (querying)
+  - Indexing
+  - Deletion
+  - Relation management
+- Django sets up an admin site by default
+  - Create users with python manage.py createsuperuser
+  - Can be translated with LANGUAGE_CODE setting
+  - Models need to be registered in their admin.py to appear here
+  - We can edit a model's fields from here
+  - We can look at the history of changes
